@@ -1,0 +1,94 @@
+﻿
+<div class="row">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h1 class="panel-title">Infinite Scroll</h1>
+            <br />
+            <p>
+                Simple demo code to accomplish the
+                Facebook/Twitter infinite scroll feature.
+            </p>
+            <p>
+                Bring less initial data to your page if there
+                is a chance that additional data won't always
+                be needed
+            </p>
+        </div>
+        <div class="panel-body">
+            <h3>Project consists of 3 distinct pieces of code</h3>
+            <div class="list-group">
+                <div class="list-group-item">
+                    <h4 class="list-group-item-heading">
+                        Some service that returns JSON data and
+                        accepts a page offset parameter
+                    </h4>
+                    <p class="list-group-item-text">
+                        In this case we are using a MVC4 Web Api controller
+                        that returns sample data
+                    </p>
+                </div>
+                <div class="list-group-item">
+                    <h4 class="list-group-item-heading">
+                        Javascript code
+                    </h4>
+                    <p class="list-group-item-text">
+                        This javascript should do 2 things.
+                        <ol>
+                            <li>
+                                Asynchronously fetch a single page of data and
+                                append each item returned into a table body.
+                                Keep track of the current page offset by using
+                                a hidden input ID=offset
+                            </li>
+                            <li>
+                                Bind an event handler to the scroll event of
+                                whatever control will hold our data.  When
+                                this event happens, we trigger a call to
+                                the function that gets the next page of data
+                                if that control has been scrolled to the bottom
+                            </li>
+                        </ol>
+                    </p>
+                </div>
+                <div class="list-group-item">
+                    <h4 class="list-group-item-heading">
+                        A simple html page
+                    </h4>
+                    <p class="list-group-item-text">
+                        This page should accomplish:
+                        <ul>
+                            <li>
+                                Contain a call to the javascript that
+                                sets up the handling of the scroll event.
+                                Use Jquery to pass the div that holds the table
+                                and a selector pointing to the tbody itself.
+
+                            </li>
+                            <li>
+                                Contain a hidden input called offset that
+                                will be used to keep track of what page
+                                of data we are fetching
+                            </li>
+                            <li>
+                                Contain an initial call to the javascript that
+                                fetches the data...the scroll event will trigger
+                                subsequent calls
+                            </li>
+                            <li>
+                                Contain a div tag with a table that we will
+                                place all of our data in.  This table
+                                should have a @Html.Raw("&lt;tbody&gt;")
+                                tag.  In the javascript, you use this to 
+                                select the appropriate place to add your 
+                                data rows.
+                            </li>
+                        </ul>
+                        <br />
+                        <a href="~/Default.html">Completed Code</a>
+                        <br />
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

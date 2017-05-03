@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <style>
+        .table {
+            overflow-y: scroll;
+            height: 380px;
+        }
+    </style>
+    <script src="Scripts/jquery-1.10.2.js"></script>
+    <script src="Scripts/InfiniteScroll.js"></script>
+    <script>
+        $(function () {
+            addScrollHandler($('.table'), $('#datarows'));
+            getData($('#datarows'));
+        })
+    </script>
+</head>
+<body>
+    <input type="hidden" id="offset" value="1" />
+    <div class="table">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Studio</th>
+                    <th>Character</th>
+                    <th>Show</th>
+                </tr>
+            </thead>
+            <tbody id="datarows"></tbody>
+        </table>
+    </div>
+</body>
+</html>
